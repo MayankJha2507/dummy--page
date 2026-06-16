@@ -19,28 +19,38 @@
     }
     header {
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 90px 20px 70px;
       background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
     }
-    header h1 {
-      font-size: 3.5rem;
-      letter-spacing: 8px;
-      text-transform: uppercase;
+    header img.logo {
+      max-width: 420px;
+      width: 80%;
+      filter: invert(1) brightness(1.3);
     }
-    header p { margin-top: 16px; color: #aaa; font-style: italic; }
-    .prism {
-      width: 0; height: 0; margin: 40px auto 0;
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
-      border-bottom: 104px solid #fff;
-      opacity: 0.9;
-    }
-    main { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
-    section { margin-bottom: 56px; }
+    header p { margin-top: 20px; color: #aaa; font-style: italic; }
+    main { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
+    section { margin-bottom: 64px; }
     h2 {
-      font-size: 1.8rem; margin-bottom: 16px;
-      border-bottom: 1px solid #333; padding-bottom: 8px;
+      font-size: 1.8rem; margin-bottom: 24px;
+      border-bottom: 1px solid #333; padding-bottom: 10px;
     }
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 28px;
+    }
+    .album { text-align: center; }
+    .album img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s ease;
+    }
+    .album img:hover { transform: scale(1.04); }
+    .album .title { margin-top: 12px; font-weight: bold; }
+    .album .year { color: #888; font-size: 0.9rem; }
     ul { list-style: none; }
     li { padding: 8px 0; border-bottom: 1px solid #1a1a1a; }
     footer {
@@ -51,9 +61,8 @@
 </head>
 <body>
   <header>
-    <h1>Pink Floyd</h1>
+    <img class="logo" src="images/pink-floyd-logo.png" alt="Pink Floyd logo" />
     <p>Shine on, you crazy diamond</p>
-    <div class="prism"></div>
   </header>
 
   <main>
@@ -69,13 +78,33 @@
 
     <section>
       <h2>Iconic Albums</h2>
-      <ul>
-        <li>The Dark Side of the Moon (1973)</li>
-        <li>Wish You Were Here (1975)</li>
-        <li>Animals (1977)</li>
-        <li>The Wall (1979)</li>
-        <li>The Division Bell (1994)</li>
-      </ul>
+      <div class="albums">
+        <div class="album">
+          <img src="images/dark-side-of-the-moon.png" alt="The Dark Side of the Moon album cover" />
+          <div class="title">The Dark Side of the Moon</div>
+          <div class="year">1973</div>
+        </div>
+        <div class="album">
+          <img src="images/wish-you-were-here.png" alt="Wish You Were Here album cover" />
+          <div class="title">Wish You Were Here</div>
+          <div class="year">1975</div>
+        </div>
+        <div class="album">
+          <img src="images/animals.jpg" alt="Animals album cover" />
+          <div class="title">Animals</div>
+          <div class="year">1977</div>
+        </div>
+        <div class="album">
+          <img src="images/the-wall.jpg" alt="The Wall album cover" />
+          <div class="title">The Wall</div>
+          <div class="year">1979</div>
+        </div>
+        <div class="album">
+          <img src="images/the-division-bell.jpg" alt="The Division Bell album cover" />
+          <div class="title">The Division Bell</div>
+          <div class="year">1994</div>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -91,7 +120,7 @@
   </main>
 
   <footer>
-    <p>A fan tribute page &middot; Pink Floyd</p>
+    <p>A fan tribute page &middot; Pink Floyd &middot; Album art &copy; their respective owners</p>
   </footer>
 </body>
 </html>
